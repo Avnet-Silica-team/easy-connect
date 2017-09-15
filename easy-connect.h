@@ -53,6 +53,11 @@ NanostackRfPhyMcr20a rf_phy(MCR20A_SPI_MOSI, MCR20A_SPI_MISO, MCR20A_SPI_SCLK, M
 #include "NanostackRfPhySpirit1.h"
 NanostackRfPhySpirit1 rf_phy(SPIRIT1_SPI_MOSI, SPIRIT1_SPI_MISO, SPIRIT1_SPI_SCLK,
 			     SPIRIT1_DEV_IRQ, SPIRIT1_DEV_CS, SPIRIT1_DEV_SDN, SPIRIT1_BRD_LED);
+#elif MBED_CONF_APP_MESH_RADIO_TYPE == SENSOR_NODE_SPIRIT1
+#include "NanostackRfPhySpirit1.h"
+#include "NanostackRfPhySensorNode.h"
+NanostackRfPhySensorNode rf_phy(SPIRIT1_SPI_MOSI, SPIRIT1_SPI_MISO, SPIRIT1_SPI_SCLK,
+			     SPIRIT1_DEV_IRQ, SPIRIT1_DEV_CS, SPIRIT1_DEV_SDN, SPIRIT1_BRD_LED);
 #elif MBED_CONF_APP_MESH_RADIO_TYPE == EFR32
 #include "NanostackRfPhyEfr32.h"
 NanostackRfPhyEfr32 rf_phy;
