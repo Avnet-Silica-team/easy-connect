@@ -41,6 +41,12 @@ ThreadInterface mesh;
 #error "No connectivity method chosen. Please add 'config.network-interfaces.value' to your mbed_app.json (see README.md for more information)."
 #endif
 
+#define ATMEL   1
+#define MCR20   2
+#define SPIRIT1 3
+#define EFR32 4
+#define SENSOR_NODE_SPIRIT1 5
+
 #if defined(MESH)
 #if MBED_CONF_APP_MESH_RADIO_TYPE == ATMEL
 #include "NanostackRfPhyAtmel.h"
